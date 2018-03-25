@@ -4,5 +4,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class mirrorTodosConfig(AppConfig):
-    name = 'mirrorTodos'
+class TodosConfig(AppConfig):
+    name = 'todos'
