@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Todo
 
 def index(request):
@@ -30,3 +30,8 @@ def add(request):
         return redirect('/todos')
     else:
         return render(request, 'add.html')
+
+def delete(request, id):
+    post = get_object_or_404(Todo, id=id)
+    post.delete()
+    return HttpResponseRedirect('/todos')
