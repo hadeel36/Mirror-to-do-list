@@ -1,0 +1,14 @@
+<br><br>
+<div>
+    <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+        <lable for="title">Title</lable><br />
+        <input type="text" name="title" id="title" />
+        <br>
+        <lable for="text">Text</lable><br />
+        <textarea name="text" id="text"></textarea>
+        <br><br>
+        <input type="submit" value="submit" />
+    </form>
+    <a href="/">Go Back</a>
+</div>
