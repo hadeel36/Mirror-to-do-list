@@ -1,14 +1,43 @@
 {% include 'partials/header.html' %}
 
-<header> To do list </header>
-<br>
-<a href="/todos/add">Add Todo</a>
-<br>
-<ul>
-    {% for todo in todos %}
-        <li><a href="/todos/details/{{todo.id}}">{{todo.title}}: {{todo.text}}</a></li>
-        <a href="{% url 'delete' id=todo.id %}">delete</a><br><br>
-    {% endfor %}
-</ul>
+<br /><br />
+<div class="container">
+    <div class="col-md-4">
+        <h2>
+            Todo List
+            <a href="/todos/add">
+                <span class="glyphicon glyphicon-plus btn-lg"></span>
+            </a>
+        </h2>
+        <ul class="list-group">
+            {% for todo in todos %}
+            <li class="list-group-item">
+                <a href="/todos/details/{{todo.id}}">
+                    {{todo.title}}: {{todo.text}}
+                </a>
+            </li>
+            <a href="{% url 'delete' id=todo.id %}">delete</a><br><br>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+        <h2>
+            Mirror Todo List
+            <a href="/todos/add">
+                <span class="glyphicon glyphicon-plus btn-lg"></span>
+            </a>
+        </h2>
+        <ul class="list-group">
+            {% for todo in todos %}
+            <li class="list-group-item">
+                <a href="/todos/details/{{todo.id}}">
+                    {{todo.title}}: {{todo.text}}
+                </a>
+            </li>
+            <a href="{% url 'delete' id=todo.id %}">delete</a><br><br>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
 {% include 'partials/footer.html' %}

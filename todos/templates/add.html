@@ -1,14 +1,25 @@
+{% include 'partials/header.html' %}
+
 <br><br>
-<div>
+<div class="container">
+    <a href="/todos">
+        <span class="glyphicon glyphicon-arrow-left btn-lg"></span>
+        Go Back
+    </a>
+    <h2>Add new todo</h2>
+    <p>Please add title and description for the new job!</p>
     <form action="{% url 'add' %}" method="post">
         {% csrf_token %}
-        <lable for="title">Title</lable><br />
-        <input type="text" name="title" id="title" />
-        <br>
-        <lable for="text">Text</lable><br />
-        <textarea name="text" id="text"></textarea>
-        <br><br>
-        <input type="submit" value="submit" />
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="des">Description:</label>
+            <textarea class="form-control" rows="3" id="des" name="text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
     </form>
-    <a href="/">Go Back</a>
 </div>
+
+{% include 'partials/footer.html' %}
