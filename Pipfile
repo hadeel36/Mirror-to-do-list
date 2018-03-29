@@ -1,8 +1,9 @@
 [[source]]
 url = "https://pypi.python.org/simple"
 verify_ssl = true
-
+dj-database-url==0.2.1
 [packages]
 
 [requires]
+dj-database-url==0.2.1
 python_version = "2.7.10"

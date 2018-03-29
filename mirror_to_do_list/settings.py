@@ -74,16 +74,19 @@ WSGI_APPLICATION = 'mirror_to_do_list.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todolist',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': '',
-        'PORT': ''
-    }
-}
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'todolist',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'HOST': '',
+#         'PORT': ''
+#     }
+# }
 
 
 # Password validation
