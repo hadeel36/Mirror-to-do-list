@@ -35,7 +35,7 @@ Add new todo
 Display todo details
 
 ### admin/
-Login to database admin
-username: admin1
-email: admin1@gmail
-password: admin123
+#### Login to database admin
+##### username: admin1
+##### email: admin1@gmail
+##### password: admin123
